@@ -126,5 +126,52 @@ public class CSMath
 		return bitSequence;
 	}
 
+	public static int[] bitSequenceToSet(int[] bitA)
+	{
+		int[] set = new int[bitA.length];
+		int ctr1 = 0;
+		int ctr2 = 0;
+
+		while(ctr1<bitA.length)
+		{
+			if(bitA[ctr1] == 1)
+			{
+				set[ctr2] = ctr1;
+				ctr2++;
+			}
+			
+			ctr1++;
+		}
+	}
 	
+	public static int[] bitUnion(int[] setA, int[] setB, int n)
+	{
+		int[] union = new int[n];
+		union = bitOr(setA,setB);
+
+		return union;
+	}
+	
+	public static int[] bitIntersection(int[] setA, int[] setB, int n)
+	{
+		int[] intersection = new int[n];
+		intersection = bitAnd(setA,setB);
+
+		return intersection;
+	}
+
+	public static int[] bitComplement(int[] setA, int n)
+	{
+		int ctr1 = 0;
+		int[] complement = new int[n];
+		while(ctr<n)
+		{
+			if(setA[ctr1] == 0)
+				setA[ctr1] = 1;
+			else
+				setA[ctr1] = 0;
+		}
+
+		return complement;
+	}
 }
